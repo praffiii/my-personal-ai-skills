@@ -1,0 +1,6 @@
+.DS_Store
+*.log
+
+# Private loop runtime state belongs outside repos by default.
+.ai/loops/
+
