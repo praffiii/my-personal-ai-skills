@@ -5,6 +5,7 @@ Reusable AI-agent skills and workflow protocols for Claude Code, Codex, and rela
 ## Included Skills
 
 - [`looping/loop-pipeline`](looping/loop-pipeline) - Manual Claude Code + Codex loop pipelines for feature development, dual-review PR review, fix loops, and refactors.
+- [`language/bahasa-mode`](language/bahasa-mode) - Indonesian brainstorming conversation mode while keeping specs, code, commits, and artifacts in English.
 
 ## Prerequisite
 
@@ -40,10 +41,11 @@ The fork keeps Codex work attached and visible inside Claude Code, which is usef
 
 ## Quick Install
 
-Copy the skill into your Claude Code skills directory:
+Copy the skills you want into your Claude Code skills directory:
 
 ```bash
 cp -R looping/loop-pipeline ~/.claude/skills/
+cp -R language/bahasa-mode ~/.claude/skills/
 ```
 
 Restart Claude Code or reload skills after copying.
@@ -62,6 +64,8 @@ Call the skill in Claude Code:
 
 For the full tutorial, see [`looping/README.md`](looping/README.md).
 
+For Bahasa Mode usage, see [`language/README.md`](language/README.md).
+
 ## What Loop Pipeline Does
 
 `loop-pipeline` formalizes a human-in-the-loop workflow:
@@ -70,3 +74,12 @@ For the full tutorial, see [`looping/README.md`](looping/README.md).
 - Codex is the executor and independent second reviewer.
 - The user is the approval gate.
 - Loop state is private by default under `~/.claude/loop-runs/`.
+
+## What Bahasa Mode Does
+
+`bahasa-mode` is a language layer for brainstorming:
+
+- chat with the user in Bahasa Indonesia
+- keep technical terms in English
+- keep specs, plans, code, commits, PR bodies, and other artifacts in English
+- switch back to English when brainstorming ends or implementation starts
