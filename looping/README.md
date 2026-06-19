@@ -48,6 +48,16 @@ cp -R looping/loop-pipeline ~/.claude/skills/
 
 Restart Claude Code or reload skills after copying.
 
+## Generated Files
+
+When `loop-pipeline` runs, it creates compact loop state files outside your project repo by default:
+
+```text
+~/.claude/loop-runs/<repo-id>/<loop-id>.md
+```
+
+Each file stores the current pipeline stage, loop goal, decisions, iteration count, and next action. This makes it possible to continue a loop later, even from another Claude Code chat, without committing workflow state to the repo.
+
 ## How To Use
 
 In Claude Code, call the skill with `/loop-pipeline`:

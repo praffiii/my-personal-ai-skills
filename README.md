@@ -66,6 +66,16 @@ For the full tutorial, see [`looping/README.md`](looping/README.md).
 
 For Bahasa Mode usage, see [`language/README.md`](language/README.md).
 
+## Generated Files
+
+When `loop-pipeline` runs, it stores compact loop checkpoints outside the project repo by default:
+
+```text
+~/.claude/loop-runs/<repo-id>/<loop-id>.md
+```
+
+These files let Claude continue a loop later without writing workflow state into your repository. Repo-local loop state such as `.ai/loops/` is opt-in only.
+
 ## What Loop Pipeline Does
 
 `loop-pipeline` formalizes a human-in-the-loop workflow:
