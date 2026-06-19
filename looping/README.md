@@ -8,8 +8,35 @@ Skills for manual loop engineering workflows.
 
 ## Prerequisite
 
-Install the official Claude Code Codex plugin before using `loop-pipeline`:
-[openai/codex-plugin-cc](https://github.com/openai/codex-plugin-cc).
+Install a Claude Code Codex plugin before using `loop-pipeline`.
+
+### Option 1: Official Plugin
+
+Use the official OpenAI plugin if you want the upstream Claude Code + Codex integration:
+
+```bash
+/plugin marketplace add openai/codex-plugin-cc
+/plugin install codex@openai-codex
+/reload-plugins
+/codex:setup
+```
+
+Repository: [openai/codex-plugin-cc](https://github.com/openai/codex-plugin-cc)
+
+### Option 2: Praffi's Fork (Recommended For Loop Pipeline)
+
+Use this fork if you want the workflow `loop-pipeline` was designed around: Claude as orchestrator/reviewer and Codex as a visible executor or independent second reviewer.
+
+```bash
+/plugin marketplace add praffiii/codex-plugin-cc
+/plugin install codex@openai-codex
+/reload-plugins
+/codex:setup
+```
+
+Repository: [praffiii/codex-plugin-cc](https://github.com/praffiii/codex-plugin-cc)
+
+This fork keeps Codex work attached and visible inside Claude Code, instead of letting delegated work disappear into detached background execution. That makes it a better fit for loop workflows where Claude reviews the Codex result before the next step.
 
 ## Install
 
